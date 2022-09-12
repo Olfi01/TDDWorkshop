@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Arrays;
+
 /**
  * To be valid, an e-mail address needs to have:
  * A recipient name:
@@ -27,6 +29,17 @@ public class MailAddressValidator {
 
         String recipientName = address.split("@")[0];
         if(recipientName.length() > 64)  return false;
+
+
+        String[] specialChars = {"!", "#", "$",  "%", "&" , "'", "*", "+", "-", "/", "=", "?", "^", "_", "`", "{", "|"};
+        for(String specialChar1: specialChars) {
+            for(String specialChar2: specialChars) {
+                String forbiddenConsChars = specialChar1 + specialChar2;
+                if(recipientName.contains(forbiddenConsChars)) {
+                    return false;
+                }
+            }
+        }
 
         return true;
     }
