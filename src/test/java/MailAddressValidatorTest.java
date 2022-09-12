@@ -40,4 +40,19 @@ public class MailAddressValidatorTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void testForConsecutiveSpecialChars() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyercapgemini!?@.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        assertFalse(result);
+    }
+
+
+
 }
