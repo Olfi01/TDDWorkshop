@@ -21,11 +21,25 @@ public class MailAddressValidatorTest {
     public void testForAtSymbol() {
         // Arrange
         MailAddressValidator validator = new MailAddressValidator();
-        String adress = "florian.meyercapgemini.com";
+        String address = "florian.meyercapgemini.com";
 
         // Act
-        boolean result = validator.isValidEmailAddress(adress);
+        boolean result = validator.isValidEmailAddress(address);
 
+        // Assert
+        assertFalse(result);
+    }
+
+    @Test
+    public void shouldHaveRecipientName() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String address = "@capgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(address);
+
+        // Assert
         assertFalse(result);
     }
 }
