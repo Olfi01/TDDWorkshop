@@ -16,4 +16,16 @@ public class MailAddressValidatorTest {
         // Assert
         assertTrue(result);
     }
+
+    @Test
+    public void testForAtSymbol() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyercapgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        assertFalse(result);
+    }
 }
