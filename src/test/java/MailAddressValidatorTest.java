@@ -42,4 +42,30 @@ public class MailAddressValidatorTest {
         // Assert
         assertFalse(result);
     }
+
+    @Test
+    public void recipientNameIllegalCharacterDoubleSymbol(){
+        //Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyer__@capgemini.com";
+
+        //Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        // Assert
+        assertFalse(result);
+    }
+
+    @Test
+    public void recipientNameIllegalCharacter(){
+        //Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyerü@capgemini.com";
+
+        //Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        // Assert
+        assertFalse(result);
+    }
 }
