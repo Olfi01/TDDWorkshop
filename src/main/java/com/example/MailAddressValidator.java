@@ -27,6 +27,7 @@ public class MailAddressValidator {
         String[] split = address.split("@");
         if (split[0].isEmpty()) return false;
         if (split[0].length() > 64) return false;
+        if (!split[0].matches("[A-Za-z0-9!#$%&'*\\-/=?^_`{|]+")) return false;
         return true;
     }
 }
