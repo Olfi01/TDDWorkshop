@@ -28,4 +28,16 @@ public class MailAddressValidatorTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void testForMaxLength() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        assertFalse(result);
+    }
 }
