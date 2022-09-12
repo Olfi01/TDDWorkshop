@@ -31,6 +31,7 @@ public class MailAddressValidator {
         if(recipientName.length() > 64)  return false;
 
 
+        // Special chars in recipient name
         String[] specialChars = {"!", "#", "$",  "%", "&" , "'", "*", "+", "-", "/", "=", "?", "^", "_", "`", "{", "|"};
         for(String specialChar1: specialChars) {
             for(String specialChar2: specialChars) {
@@ -40,6 +41,10 @@ public class MailAddressValidator {
                 }
             }
         }
+
+        // max lenght domain name
+        String domainName = address.split("@")[1];
+        if(domainName.length() > 253) return false;
 
         return true;
     }
