@@ -42,4 +42,17 @@ public class MailAddressValidatorTest {
         // Assert
         assertFalse(result);
     }
+
+    @Test
+    public void shouldHaveValidRecipientName() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String address = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@capgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(address);
+
+        // Assert
+        assertFalse(result);
+    }
 }
