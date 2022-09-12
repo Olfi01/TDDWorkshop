@@ -65,6 +65,18 @@ public class MailAddressValidatorTest {
         assertFalse(result);
     }
 
+    @Test
+    public void testDomainNameChars() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyer@capgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        assertTrue(result);
+    }
+
 
 
 }
