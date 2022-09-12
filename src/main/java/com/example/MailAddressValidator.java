@@ -24,6 +24,10 @@ package com.example;
 public class MailAddressValidator {
     public boolean isValidEmailAddress(String address) {
         if (!address.contains("@")) return false;
+
+        String recipientName = address.split("@")[0];
+        if(recipientName.length() > 64)  return false;
+
         return true;
     }
 }

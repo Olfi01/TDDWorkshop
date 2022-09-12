@@ -33,7 +33,7 @@ public class MailAddressValidatorTest {
     public void testForMaxLength() {
         // Arrange
         MailAddressValidator validator = new MailAddressValidator();
-        String adress = "florian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgemini.com";
+        String adress = "florian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgeminiflorian.meyercapgemini@.com";
 
         // Act
         boolean result = validator.isValidEmailAddress(adress);
