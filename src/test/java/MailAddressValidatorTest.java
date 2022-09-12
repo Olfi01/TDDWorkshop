@@ -26,6 +26,20 @@ public class MailAddressValidatorTest {
         // Act
         boolean result = validator.isValidEmailAddress(adress);
 
+        // Assert
+        assertFalse(result);
+    }
+
+    @Test
+    public void recipientNameLenght(){
+        //Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyerfurchtbarlangerstringderüber64charadcterhatalsohoffentlichichwillnichtzählen@capgemini.com";
+
+        //Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        // Assert
         assertFalse(result);
     }
 }
