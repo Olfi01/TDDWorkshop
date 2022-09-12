@@ -53,6 +53,18 @@ public class MailAddressValidatorTest {
         assertFalse(result);
     }
 
+    @Test
+    public void testMaxLenghtDomainName() {
+        // Arrange
+        MailAddressValidator validator = new MailAddressValidator();
+        String adress = "florian.meyer@capgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgeminicapgemini.com";
+
+        // Act
+        boolean result = validator.isValidEmailAddress(adress);
+
+        assertFalse(result);
+    }
+
 
 
 }
