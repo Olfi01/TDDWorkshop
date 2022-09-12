@@ -46,6 +46,10 @@ public class MailAddressValidator {
         String domainName = address.split("@")[1];
         if(domainName.length() > 253) return false;
 
+        // domain name regex
+        String pattern = "([a-z]|[A-Z]|[0-9]|\\.)*";
+        if(!domainName.matches(pattern)) return false;
+
         return true;
     }
 }
